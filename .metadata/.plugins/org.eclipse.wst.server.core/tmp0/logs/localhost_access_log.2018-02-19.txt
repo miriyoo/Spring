@@ -1,0 +1,7 @@
+127.0.0.1 - - [19/Feb/2018:13:26:28 +0900] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [19/Feb/2018:13:26:31 +0900] "GET /project2/ HTTP/1.1" 200 3057
+0:0:0:0:0:0:0:1 - - [19/Feb/2018:13:26:32 +0900] "GET /project2/resources/js/caption.js;jsessionid=4801517831F109B216F07B5DD8B65126 HTTP/1.1" 200 280
+0:0:0:0:0:0:0:1 - - [19/Feb/2018:13:26:32 +0900] "GET /project2/resources/css/main.css;jsessionid=4801517831F109B216F07B5DD8B65126 HTTP/1.1" 200 2748
+0:0:0:0:0:0:0:1 - - [19/Feb/2018:13:26:32 +0900] "GET /project2/resources/css/caption.css;jsessionid=4801517831F109B216F07B5DD8B65126 HTTP/1.1" 200 775
+0:0:0:0:0:0:0:1 - - [19/Feb/2018:13:26:32 +0900] "GET /project2/resources/js/jquery-3.2.1.js;jsessionid=4801517831F109B216F07B5DD8B65126 HTTP/1.1" 200 268039
+0:0:0:0:0:0:0:1 - - [19/Feb/2018:13:26:32 +0900] "GET /favicon.ico HTTP/1.1" 404 1016

@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+
+
+body{
+	margin: 0;
+	background-color: rgb(246,246,246);
+}
+
+.wrap{
+  width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.readBoard{
+	height: 900px;
+    background: white;
+    margin-top: 30px;
+    overflow: auto;
+}
+
+.s1{
+	color: rgb(92,209,229);
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+    display: block;
+    padding-top: 15px;
+}
+
+.s2{
+	color: #4C4C4C;
+    font-size: 35px;
+}
+
+.s3{
+	color: #4C4C4C;
+}
+
+.ee{
+	text-align: center;
+    width: 100px;
+    line-height: 3;
+}
+
+
+
+
+
+
+
+
+
+

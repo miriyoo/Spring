@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 방명록 처리 SQL -->
+<mapper namespace="global.sesoc.web4.dao.BoardMapper">
+
+<!-- 글 저장  -->
+<insert id="insert" parameterType="Board">
+insert into web4board (boardnum, name, password, content) 
+values (web4board_seq.nextval, #{name}, #{password}, #{content})
+</insert>
+
+<!-- 모든 글 검색 -->
+<select id="select" resultType="Board">
+select * from web4board order by boardnum desc
+</select>
+
+<!-- 글번호와 비밀번호로 글 삭제 -->
+<delete id="delete" parameterType="Board">
+delete from web4board where boardnum = #{boardnum} and password = #{password}
+</delete>
+
+<!-- 글번호와 비밀번호로 글 삭제 2-->
+<delete id="delete2" parameterType="map">
+delete from web4board where boardnum = #{boardnum} and password = #{password}
+</delete>
+
+<!-- 글번호와 비밀번호로 글 삭제 3-->
+<delete id="delete3">
+delete from web4board where boardnum = #{0} and password = #{1}
+</delete>
+
+</mapper>

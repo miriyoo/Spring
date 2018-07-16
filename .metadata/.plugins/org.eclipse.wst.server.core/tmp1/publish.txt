@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Tue Mar 27 13:29:07 KST 2018
+org.eclipse.jst.jee.server\:RealTimeEditing=C\:\\SCITMASTER\\spring-tool-suite-3.8.2.RELEASE-e4.6.1-win32-x86_64\\sts-bundle\\pivotal-tc-server-developer-3.2.0.RELEASE\\base-instance\\wtpwebapps\\RealTimeEditing
+org.eclipse.jst.jee.server\:Calendar=C\:\\SCITMASTER\\spring-tool-suite-3.8.2.RELEASE-e4.6.1-win32-x86_64\\sts-bundle\\pivotal-tc-server-developer-3.2.0.RELEASE\\base-instance\\wtpwebapps\\Calendar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\SC\ IT\ MASTER\\.m2\\repository\\org\\springframework\\spring-web\\4.3.6.RELEASE\\spring-web-4.3.6.RELEASE.jar=C\:\\SCITMASTER\\spring-tool-suite-3.8.2.RELEASE-e4.6.1-win32-x86_64\\sts-bundle\\pivotal-tc-server-developer-3.2.0.RELEASE\\base-instance\\wtpwebapps\\RealTimeEditing\\WEB-INF\\lib\\spring-web-4.3.6.RELEASE.jar

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.scmaster.web7.customer.dao.CustomerMapper">
+	
+	 <!-- 회원 정보 검색 -->
+	 <select id="searchCustomerOne" parameterType="string" resultType="customer">
+	 	select
+	 		custid
+	 		, password
+	 		, name
+	 		, email
+	 		, division
+	 		, idno
+	 		, address
+	 	from 
+	 		customer1
+	 	where
+	 		custid = #{custid}
+	 </select>
+	 
+	 <!-- 회원 정보 등록 -->
+	 <insert id="joinCustomer" parameterType="customer">
+	 	insert into
+	 		customer1
+	 		(
+	 			custid
+	 			, password
+	 			, name
+	 			, email
+	 			, division
+	 			, idno
+	 			, address
+	 		) values (
+	 			#{custid}
+	 			, #{password}
+	 			, #{name}
+	 			, #{email}
+	 			, #{division}
+	 			, #{idno}
+	 			, #{address}
+	 		)
+	 </insert>
+	 
+	 <!-- 회원 정보 수정 -->
+	 <update id="UpdateCustomer" parameterType="customer">
+	 	update 
+	 		customer1
+	 	set
+	 		password = #{password}
+	 		, name = #{name}
+	 		, email = #{email}
+	 		, division = #{division}
+	 		, idno = #{idno}
+	 		, address = #{address}
+	 	where 
+	 		custid = #{custid} 	
+	 </update>
+	
+</mapper>
+
+
+
+
+
+

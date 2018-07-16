@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.scmaster.web6.board.dao.BoardMapper">
+	
+	 <!-- 게시판 등록 -->
+	 <insert id="insertBoard" parameterType="board">
+	 	insert into
+	 		board3
+	 		(
+	 			boardnum
+	 			, id
+	 			, title
+	 			, content
+	 			, inputdate
+	 			, hits
+	 			<if test="originalfile != null and savedfile != null">
+	 			, originalfile
+	 			, savedfile
+	 			</if>
+	 		) values (
+	 			board3_seq.nextval
+	 			, #{id}
+	 			, #{title}
+	 			, #{content}
+	 			, SYSDATE
+	 			, '0'
+	 			<if test="originalfile != null and savedfile != null">
+	 			, #{originalfile}
+	 			, #{savedfile}
+	 			</if>
+	 		)
+	 </insert>
+	 
+	 <!-- 게시판 전체 목록 불러오기 -->
+	 <select id="selectBoardAll" resultType="board" parameterType="hashmap">
+	 	select
+	 		boardnum
+	 		, id
+	 		, title
+	 		, content
+	 		, to_char(inputdate, 'YYYY-MM-DD') inputdate
+	 		, hits
+	 		, originalFile
+	 		, savedfile
+	 	from
+	 		board3
+	 	<if test="searchText != null">
+	 	where
+	 		${searchSelect} like '%' || #{searchText} || '%'
+	 	</if>
+	 	order by
+	 		boardnum desc
+	 </select>
+	 
+	  <!-- 특정 게시글 불러오기 -->
+	  <select id="selectBoardOne" resultType="board" parameterType="int">
+	  	select
+	 		boardnum
+	 		, id
+	 		, title
+	 		, content
+	 		, to_char(inputdate, 'YYYY-MM-DD HH24:MM:SS') inputdate
+	 		, hits
+	 		, originalFile
+	 		, savedfile
+	 	from
+	 		board3
+	 	where 
+	 		boardnum = #{boardnum}
+	  </select>
+	  
+	  <!-- 조회 수 증가 -->
+	  <update id="updateHits" parameterType="int">
+	  	update
+	  		board3
+	  	set
+	  		hits = hits + 1
+	  	where
+	  		boardnum = #{boardnum}
+	  </update>
+	  
+	  <!-- 게시글 삭제하기 -->
+	  <delete id="deleteBoard" parameterType="board">
+	  	delete from
+	  		board3
+	  	where
+	  		boardnum = #{boardnum}
+	  	and
+	  		id = #{id}
+	  </delete>
+	  
+	   <!-- 게시글 수정하기 -->
+	   <update id="reviseOne" parameterType="board">
+	   	update
+	   		board3
+	   	set
+	   		title = #{title}
+	 		, content = #{content}
+	 	where
+	 		boardnum = #{boardnum}
+	 	and
+	 		id = #{id}
+	   </update>
+	 
+	 	<!-- 전체 글 개수 (검색 필터링 후) -> 사용자가 검색을 한 결과도 페이징 처리를 해줘야하기 때문에 -->
+	 	<select id="getTotal" parameterType="string" resultType="int">
+	 		select
+	 			count(*)
+	 		from
+	 			board3
+	 		<if test="searchText != null">
+	 		where
+	 			${searchSelect} like '%' || #{searchText} || '%'
+	 		</if>
+	 	</select>
+	 	
+	 	<!-- 리플 등록하기 -->
+	 	<insert id="insertReply" parameterType="reply">
+	 		insert into
+	 			reply3
+	 			(
+	 				replynum
+	 				, boardnum
+	 				, id
+	 				, text
+	 			) values (
+	 				reply3_seq.nextval
+	 				, #{boardnum}
+	 				, #{id}
+	 				, #{text}
+	 			)
+	 	</insert>
+	 	
+	 	<!-- 리플 목록 가져오기 -->
+	 	<select id="selectReplyAll" parameterType="int" resultType="reply">
+	 		select
+	 			replynum
+	 			, boardnum
+	 			, id
+	 			, text
+	 			, to_char(inputdate, 'yyyy-MM-dd') inputdate
+	 		from
+	 			reply3
+	 		where
+	 			boardnum = #{boardnum}
+	 		order by
+	 			replynum desc
+	 	</select>
+	 	
+	 	<!-- 리플 삭제 -->
+	 	<delete id="deleteReply" parameterType="reply">
+	 		delete
+	 			reply3
+	 		where 
+	 			replynum = #{replynum}
+	 		and
+	 			id = #{id}
+	 	</delete>
+	 	
+	 	<!-- 리플 수정 -->
+	 	<update id="replyUpdate" parameterType="reply">
+	 		update
+	 			reply3
+	 		set
+	 			text = #{text}
+	 		where
+	 			replynum = #{replynum}
+	 		and
+	 			id = #{id}
+	 	</update>
+	 
+	 
+	 
+	 
+	
+</mapper>
+
+
+
+
+
+

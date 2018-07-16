@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시판 처리 SQL -->
+<mapper namespace="com.scmaster.web5.dao.BoardMapper">
+
+	<!-- 게시판 등록 -->
+	<insert id="insertBoard" parameterType="Board">
+		insert into boardEx(
+			boardNo
+			, boardName
+			, boardPassword
+			, boardContent
+		) values (
+			boardEx_seq.nextval
+			, #{boardName}
+			, #{boardPassword}
+			, #{boardContent}
+		)
+	</insert>
+	
+	<!-- 게시판 목록 가져오기 -->
+	<select id="getBoardList" resultType="Board">
+		select
+			boardNo
+			, boardName
+			, boardPassword
+			, boardContent
+			, to_char(boardDate, 'YYYY/MM/DD HH24:MI:SS') boardDate
+		from
+			boardEx
+		order by
+			boardNo desc
+	</select>
+	
+	<!-- 게시판 삭제하기 -->
+	<delete id="deleteBoard" parameterType="map">
+		delete from boardEx
+			where boardNo = #{boardNo} and boardPassword = #{boardPassword}
+	</delete>
+	
+	<!-- 게시판 수정하기 -->
+	<update id="updateBoard" parameterType="Board">
+		update 
+			boardEx
+		set
+			boardContent = #{boardContent}
+		where
+			boardNo = #{boardNo}
+	</update>
+	
+	<!-- 특정 게시글 조회 -->
+	<select id="selectOne" parameterType="int" resultType="Board">
+		select
+			boardNo
+			, boardName
+			, boardPassword
+			, boardContent
+			, to_char(boardDate, 'YYYY/MM/DD HH24:MI:SS') boardDate
+		from
+			boardEx
+		where
+			boardNo = #{boardNo}
+	</select>
+</mapper>
+
+
+
+
+
+

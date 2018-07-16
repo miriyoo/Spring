@@ -1,0 +1,8 @@
+1520313283394	Rename package 'com.androidserver.www'
+1520313306582	Rename package 'com.androidserver.www.dao'
+1520313345554	Rename resource 'member.sql'
+1520319256142	Rename type 'Member'
+1520319460935	Rename resource 'memberMapper.xml'
+1520319479169	Rename type 'MemberDAO'
+1520319491929	Rename type 'MemberMapper'
+1520323907182	Move file

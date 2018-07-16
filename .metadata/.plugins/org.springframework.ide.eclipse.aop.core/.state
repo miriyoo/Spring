@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="CookingWeb"/>
+<aop-project name="171228_board_ex"/>
+<aop-project name="CanchoProject"/>
+<aop-project name="springWeb2"/>
+<aop-project name="springWeb4"/>
+<aop-project name="180102_Final"/>
+<aop-project name="Calendar"/>
+<aop-project name="FirePadSave"/>
+<aop-project name="AndroidServer"/>
+<aop-project name="JavaScript"/>
+<aop-project name="171213_TestProject"/>
+<aop-project name="180111_Exercise"/>
+<aop-project name="180123_Ajax1"/>
+<aop-project name="180115_JavaScript"/>
+<aop-project name="Chatting"/>
+<aop-project name="171218_Spring"/>
+<aop-project name="171226_DB"/>
+<aop-project name="ch16-Websocket"/>
+<aop-project name="project2"/>
+<aop-project name="springWeb5"/>
+<aop-project name="test"/>
+<aop-project name="171221_WebProject"/>
+<aop-project name="171215"/>
+</aop-reference-model>

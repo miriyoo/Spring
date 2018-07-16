@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;FileService.java&apos; to &apos;CanchoProject/src/main/java/lets.eat.cancho.common.util&apos;&#x0D;&#x0A;- Original project: &apos;project2&apos;&#x0D;&#x0A;- Destination element: &apos;CanchoProject/src/main/java/lets.eat.cancho.common.util&apos;&#x0D;&#x0A;- Original element: &apos;com.scmaster.project2.common.util.FileService.java&apos;" description="Copy compilation unit" destination="=CanchoProject/src\/main\/java&lt;lets.eat.cancho.common.util" element1="/src\/main\/java&lt;com.scmaster.project2.common.util{FileService.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1523511408368" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,14 @@
+/* CSS Document */
+*{margin:0; padding:0}
+
+/* boxgrid Jquery*/
+.boxgrid{width: 300px; height: 250px; overflow: hidden; position: relative;
+ margin:20px}
+.boxgrid img{position: absolute; top: 0; left: 0; border: 0;}
+.boxgrid dt{padding:18px 10px; color:#fff; font-weight:bold;font-family:arial;font-size:1.0em}
+.boxgrid dd{color:#fff;font-size:0.846em; padding: 0 20px}
+.boxcaption{ position: absolute; background: #000; height: 250px; width: 100%; opacity: .7;filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+-MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";}
+.boxgrid .boxcaption {top:170px;left: 0} /* top값을 수정한다.  */
+.boxgrid .boxcaption dd{line-height:1.5em}
+.boxgrid .boxcaption a{color:#FCF; text-decoration:none; }
